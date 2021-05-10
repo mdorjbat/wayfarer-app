@@ -1,0 +1,58 @@
+<!--<div class="grid-container">-->
+<!--  <div class="grid-item1">-->
+<!--    <h2>Favorite Cities</h2>-->
+<!--    <ul class = "cities">-->
+<!--      <li *ngFor = "let city of cities; let i = index"-->
+<!--          [class.selected]="city === selectedCity"-->
+<!--          (click)="onSelcet(city)"-->
+<!--          >-->
+<!--&lt;!&ndash;        <a routerLink="/cities/{{city.id}}"></a>&ndash;&gt;-->
+<!--        <span class = "badge">{{city.id}}</span>{{city.name}}-->
+<!--&lt;!&ndash;        <a routerLink="/{{selectedCity.id}}">{{selectedCity.id}}</a>&ndash;&gt;-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--  <div class="grid-item2">-->
+<!--    <app-city-details></app-city-details>-->
+<!--    <h1><a routerLink="/cities/{{index}}"></a></h1>-->
+<!--    <div class="details" *ngIf="selectedCity">-->
+<!--      <h1><a routerLink="/cities/{{selectedCity.id}}"></a></h1>-->
+<!--      <h2>{{selectedCity.name | uppercase}} Details</h2>-->
+<!--      <div ><span>id: </span>{{selectedCity.id}}</div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<router-outlet></router-outlet>-->
+<div class="container-fluid">
+  <div class="row-custom">
+    <div class="col">
+      <div class="city-list-background">
+        <h1>Cities</h1>
+        <div *ngFor="let city of cities" class="row">
+          <div class="col-sm-4" >
+            <div class="selected">
+              <img class="icon" src="{{city.imgUrl}}" alt="">
+
+              <div div class="scaledng" [style.transform]="scaleXY">
+
+              </div>
+            </div>
+
+          </div>
+          <div class="cities">
+
+            <h1><a routerLink="/cities/{{city.id}}">{{city.name}}</a></h1>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="col-sm-8 cities-component-main">
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container-details">
+  <div class="row">
+    <div class="col-custom">
+      <h1>{{city.name}}</h1>
+      <app-weather [city]="city"></app-weather>
+      <div class="weather">
+      </div>
+
+    </div>
+    <div class="col-sm-8">
+      <div class="image-size">
+        <img class="img-details" src="{{city.imgUrl}}" alt="">
+      </div>
+
+
+    </div>
+  </div>
+  <div class="row">
+    <h1>Posts</h1>
+    <div *ngFor="let post of city.posts; index as i" class="row posts-component-card">
+      <div class="col-sm-2">
+        <img class="img-small" src="{{city.imgUrl}}" alt="">
+
+      </div>
+      <div class="col-sm-8">
+        <h1><a routerLink="/cities/{{city.id}}/posts/{{i}}">{{post.title}}</a></h1>
+        <p>{{post.body}}</p>
+      </div>
+    </div>
+  </div>
+</div>
